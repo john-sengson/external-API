@@ -5,7 +5,7 @@ import APOD from './APOD'
 const App = () => {
   return (
     <>
-    <h1>React development has begun!</h1>
+    <h1>Trello - API - Pokemon</h1>
     <APOD />
     </>
   )
