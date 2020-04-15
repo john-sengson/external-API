@@ -32,7 +32,7 @@ render () {
     <>
     <h2>Pokemon</h2>
   
-    <img src={this.state.hdurl}/>
+    <img src='https://pokeres.bastionbot.org/images/pokemon/1.png'/>
     <div>Pokemon Id:{this.state.id}</div>
     <div>Name:{this.state.name}</div>
     <div>Height:{this.state.height}</div>
