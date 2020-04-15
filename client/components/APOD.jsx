@@ -2,34 +2,36 @@ import React from 'react'
 import request from 'superagent'
 
 
-const apiKey= 'zhxmVk9zWbkrhQGxSfxpZLKcSTL61Fwu7C2nX2se'
-const apiUrl= 'https://api.nasa.gov/planetary/apod'
+// const apiKey= 'zhxmVk9zWbkrhQGxSfxpZLKcSTL61Fwu7C2nX2se'
+const apiUrl= 'https://dog.ceo/api/breeds/image/random'
 
 
 
 class APOD extends React.Component {
   state = {
-    title: '',
-    explanation: '',
-    hdurl: ''
+    // title: '',
+    // explanation: '',
+    // hdurl: ''
+    message: '',
+    status: ''
   }
 
 componentDidMount() {
   request.get(apiUrl)
-   .query({api_key:apiKey})
+  //  .query({api_key:apiKey})
    .then(res => {
-     const {title, explanation, hdurl} = res.body
-     this.setState({title,explanation,hdurl})
+     const {status, message} = res.body
+     this.setState({status, message})
    })
 }
 
 render () {
   return (
     <>
-    <h2>API POD</h2>
-    <div>{this.state.title}</div>
-    <img src={this.state.hdurl}/>
-    <div>{this.state.explanation}</div>
+    <h2>Random Dog</h2>
+  
+    <img src={this.state.message}/>
+    <div>{this.state.status}</div>
     </>
   )
 }
